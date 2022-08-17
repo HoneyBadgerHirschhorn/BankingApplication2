@@ -37,6 +37,7 @@ public class Customer {
         this.name = name;
     }
 
+
     public ArrayList<Double> getTransactions() {
         return transactions;
     }
@@ -46,7 +47,7 @@ public class Customer {
         System.out.println("Do you wish to enter a transaction for this account?  Y or N");
         String choice = transScanner.nextLine();
         if (!Objects.equals(choice, "y") && !Objects.equals(choice, "Y")){
-            System.out.println("You chose not to enter transactions for this account.");
+            System.out.println("You chose not to enter any more transactions for this account.");
             //customerMenu;
         }
         if (Objects.equals(choice, "y") || Objects.equals(choice, "Y")) {

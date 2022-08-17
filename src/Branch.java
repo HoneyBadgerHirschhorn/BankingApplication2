@@ -55,12 +55,10 @@ Scanner scanner = new Scanner(System.in);
             customer.setTransactions(customer.enterTransactions());
             customers.add(new Customer(customer.getName(), customer.getTransactions()));
             System.out.println("You've added an account file for " + customer.getName() + ".");
-
             createCustomer();
         }
         if (!Objects.equals(choice, "y") && !Objects.equals(choice, "Y")) {
             System.out.println("You chose not create a customer file.");
-            System.out.println(customers.get(0).getName()+"     "+customers.get(0).getTransactions());
             customerMenu();
         }
         customerMenu();
@@ -128,8 +126,9 @@ Scanner scanner = new Scanner(System.in);
             customerMenu();
         }
         if (customers.size() > 0) {
-            for (Customer customer : customers) {
-                System.out.println("Name " + customer.getName() + "      Most recent transaction." + customer.getTransactions().get(customer.getTransactions().size()));
+            int length = customers.size()+1;
+            for (int i = 0; i < customers.size(); i++) {
+            System.out.println("Name " + customers.get(i).getName() + "      Most recent transaction." + customers.get(i).getTransactions().get(length));
             }
         }
         customerMenu();
